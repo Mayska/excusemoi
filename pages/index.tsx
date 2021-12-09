@@ -3,8 +3,11 @@ import Head from 'next/head'
 
 
 export default function Index() {
-  const newLocal = Math.random()
-  console.log(newLocal);
+  const start = ["J'ai'", "Ma femme a", "Mon chien a"];
+  const verbe = ["perdu", "mangé", "vendu"];
+  const end = ["les documents", "le papier", "la signature", "la piscine"];
+  const excuse = start[random(start.length)] + " / " + verbe[random(verbe.length)] + " / " + end[random(end.length)]
+
   return (
     <div className="container-xl">
       <Head>
@@ -16,13 +19,11 @@ export default function Index() {
       <main>
         <br />
         <br />
-        <h1>
-          Genarateur d’excuse
-        </h1>
+        <h1 className="text-center">Genarateur d’excuse</h1>
         <br />
         <br />
         <form action="" method="GET">
-          <input type="text" value={newLocal} />
+          <p>{excuse}, donc je ne peux pas t'augmenter.</p>
           <button type="submit">Btn</button>
         </form>
       </main>
@@ -30,8 +31,13 @@ export default function Index() {
       <footer>
         <br />
         <br />
-        <p>Prend exemples sur ton employeur pour avoir plus d’excuses pour ne pas avoir d’augmentation.</p>
+        <p>Toi aussi,  aide ton employeur a trouver des excuses pour ne pas t’augmenter.</p>
       </footer>
     </div>
   )
+}
+
+
+function random(max: number) {
+  return Math.floor(Math.random() * Math.floor(max));
 }
