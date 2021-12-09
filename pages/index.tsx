@@ -7,7 +7,7 @@ export default function Index() {
     "La boulette,", "Mardi dernier,", "Tu sais quoi,"];
   const start = ["j'ai", "ma femme a", "mon chien a", "un homme a",
     "une méduse a", "un extraterrestre a", "mon voisin a"];
-  const verbe = ["perdu", "mangé", "vendu", "vérouillé", "volé"];
+  const verbe = ["perdu", "mangé", "vendu", "vérouillé", "volé", "oublié"];
   const end = ["les documents", "le papier", "la signature", "la piscine", "la voiture", "la maison"];
   const excuse = injonction[random(injonction.length)] + " " + start[random(start.length)] + " " + verbe[random(verbe.length)] + " " + end[random(end.length)]
   const porps = {
