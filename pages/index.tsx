@@ -1,23 +1,51 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { adberbList } from './data/adverb-list';
+import { conteList } from './data/conte-list';
+import { endList } from './data/end-list';
+import { fableList } from './data/fable-list';
+import { femaleList } from './data/female-list';
+import { fourthParagraphList } from './data/fourthParagraph';
+import { itemList } from './data/item-list';
+import { livreList } from './data/livre-list';
+import { maleList } from './data/male-list';
+import { subjectList } from './data/subject-list';
+import { tableauList } from './data/tableaux';
+import { thirdParagraphPart1, thirdParagraphPart2 } from './data/thirdParagraph-list';
 
 
 export default function Index() {
-  const injonction = ["Tu ne vas pas me croire mais, ", "Ha la la,", "Non mais attend,",
-    "La boulette,", "Mardi dernier,", "Tu sais quoi,"];
-  const start = ["j'ai", "ma femme a", "mon chien a", "un homme a", "ma fille a", "une chèvre a",
-    "une méduse a", "un extraterrestre a", "mon voisin a"];
-  const verbe = ["perdu", "mangé", "vendu", "vérouillé", "volé", "oublié"];
-  const end = ["les documents", "le papier", "l'agrafeuse", "les clés", "la voiture", "la maison"];
-  const excuse = injonction[random(injonction.length)] + " " + start[random(start.length)] + " " + verbe[random(verbe.length)] + " " + end[random(end.length)]
+  let start: string[] = []
+  const begin = subjectList[random(subjectList.length)];
+  if (begin === subjectList[0]) {
+    start = femaleList;
+  } else {
+    start = maleList;
+  }
+  const firstParagraph = begin + " " + start[random(start.length)] + " " + endList[random(endList.length)] + "."
+  const item = itemList[random(itemList.length)];
+  let secondParagraph = "C'est " + adberbList[random(adberbList.length)] + " " + item + ": ";
+  if (item === item[0]) {
+    secondParagraph = secondParagraph + tableauList[random(tableauList.length)] + "."
+  } else if (item === item[1]) {
+    secondParagraph = secondParagraph + fableList[random(fableList.length)] + "De Jean de La Fontaine."
+  } else if (item === item[2]) {
+    secondParagraph = secondParagraph + livreList[random(livreList.length)] + "."
+  } else {
+    conteList
+    secondParagraph = secondParagraph + conteList[random(conteList.length)] + "."
+  }
+
+  const thirdParagraph = thirdParagraphPart1[random(thirdParagraphPart1.length)] + " " + thirdParagraphPart2[random(thirdParagraphPart2.length)]
+  const fourthParagraph = "Comme le réalisateur le souligne: '" + fourthParagraphList[random(fourthParagraphList.length)] + "'"
   const porps = {
-    headtitre: "Excuse moi, mais...",
-    titre: "Génarateur d’excuse.",
+    headtitre: "Review generator",
+    titre: "Générateur de critique évolué pour te la péter en société.",
     finexcuse: ", donc je ne peux pas t'augmenter.",
     promesse: "La prochaine fois c'est promis...",
-    label: "Trouve vite une nouvelle excuse ici, vite, vite!!!  ",
-    btntext: "Une autre",
-    conclusion: "Toi aussi,  aide ton employeur a trouver des excuses pour ne pas t’augmenter.",
+    label: "Raconte-toi là encore => ",
+    btntext: "ICI",
+    conclusion: "Tu n'as pas vu le film, mais tu veux donner ton avis...",
     signature: "By Maysk@"
 
   }
@@ -34,15 +62,18 @@ export default function Index() {
         <br />
         <h1 className="text-center">{porps.titre}</h1>
         <h5 className='text-center text-muted'>{porps.conclusion}</h5>
+
         <div className="row">
           <div className="col">
           </div>
-          <div className="col-8">
+          <div className="col-10">
             <br />
             <hr />
             <form action="/" method="GET">
-              <p className='text-center fs-5'>{excuse}{porps.finexcuse}</p>
-              <p className='text-center fs-5 fst-italic'>{porps.promesse}</p>
+              <p className='text-center fs-5'>{firstParagraph}</p>
+              <p className='text-center fs-5'>{secondParagraph}</p>
+              <p className='text-center fs-5'>{thirdParagraph}</p>
+              <p className='text-center fs-5 fst-italic'>{fourthParagraph}</p>
               <hr />
               <label>{porps.label}<button type="submit" className="btn btn-success">{porps.btntext}</button></label>
             </form>

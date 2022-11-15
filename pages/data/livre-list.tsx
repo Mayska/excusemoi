@@ -1,0 +1,20 @@
+export const livreList = [
+    "Parfois les ennuis mettent un chapeau de José Parrondo",
+    "Robe de marié de Pierre Lemaitre",
+    "N'entre pas dans mon âme avec tes chaussures de Paola Pigani",
+    "Tartes aux pommes et fin du monde de Guillaume Siaudeau",
+    "Retombées de sombrero de Richard Brautigan",
+    "L'oiseau à deux becs de Sylvain Alzial",
+    "Le Japon n'existe pas de Alberto Torres-Blandina",
+    "Allumer le chat de Barbara Constantine",
+    "La colère des aubergines de Bulbul Sharma",
+    "Les pingouins n’ont jamais froid de Andreï Kourkov",
+    "Le Loup-Noël de Michel Gay",
+    "Salam Ouessant de Azouz Begag",
+    "L'ivresse du kangourou et autres histoires du bush de Kenneth Cook",
+    "Le lundi commence le samedi de Arcadi Strougatski",
+    "Le théorème du lampadaire de Jean-Paul Fitoussi",
+    "La triste fin du petit Enfant Huître et autres histoires de Tim Burton",
+    "Le mécanicien des roses de Hamid Ziarati",
+    "L'allumeur de rêves berbères de Fellag"
+]
